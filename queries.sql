@@ -191,3 +191,8 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
 ORDER BY count DESC
 LIMIT 1;
+
+
+/* Database performance audit */
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
