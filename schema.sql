@@ -59,4 +59,7 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 CREATE INDEX visits_animal_id_asc ON visits(animal_id ASC);
 
 -- Select all the visits where vets_id = 2
-CREATE INDEX visit_vets_index ON visits (vets_id DESC);
+CREATE INDEX visit_vets_index ON visits(vet_id DESC);
+
+-- Add a non-cluster index to improve the owners search by email
+CREATE INDEX owners_email ON owners(email DESC);
