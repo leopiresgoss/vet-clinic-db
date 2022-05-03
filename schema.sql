@@ -51,3 +51,15 @@ CREATE TABLE visits (
     CONSTRAINT fk_vet FOREIGN KEY(vet_id) REFERENCES vets(id),
     CONSTRAINT fk_visits_specie FOREIGN KEY(animal_id) REFERENCES animals(id)
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Add a non-cluster index to improve the visits search by animal_id
+CREATE INDEX visits_animal_id_asc ON visits(animal_id ASC);
+
+-- Select all the visits where vets_id = 2
+CREATE INDEX visit_vets_index ON visits(vet_id DESC);
+
+-- Add a non-cluster index to improve the owners search by email
+CREATE INDEX owners_email ON owners(email DESC);
