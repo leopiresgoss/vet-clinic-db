@@ -3,6 +3,9 @@
 > A vet clinc relational database built with PostgreSQL
 
 
+## Database Schema Diagram
+[Diagram Link](https://dbdiagram.io/d/6271812d7f945876b6ae242c)
+
 
 ## Getting Started
 
